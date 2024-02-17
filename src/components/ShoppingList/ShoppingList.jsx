@@ -5,7 +5,7 @@ export default function ShoppingList() {
     const [items, setItems] = useState([]);
 
     const [text, setText] = useState("");
-    const [quantity, setQuantity] = useState(0);
+    const [quantity, setQuantity] = useState(1);
 
     function addItem(description, quantity) {
         const newItem = {
@@ -16,7 +16,7 @@ export default function ShoppingList() {
         };
         setItems([...items, newItem]);
         setText("");
-        setQuantity(0)
+        setQuantity(1)
     }
 
     function deleteItem(id) {
@@ -48,7 +48,7 @@ export default function ShoppingList() {
                     className={`w-1/2 text-sm rounded-md px-2
                 `}
                     type="text"
-                    placeholder="Type here..."
+                    placeholder="Descrição do produto"
                     value={text}
                     onChange={(e) => setText(e.target.value)}
                 />
@@ -60,7 +60,7 @@ export default function ShoppingList() {
                     `}
                     onClick={() => addItem(text, quantity)}
                 >
-                    Add Item
+                    Adicionar
                 </button>
             </div>
 
